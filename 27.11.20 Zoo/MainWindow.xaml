@@ -15,11 +15,6 @@
         <Grid.Background>
             <ImageBrush ImageSource="backgroun1d.jpg"/>
         </Grid.Background>
-
-
-
-
-
     </Grid>
 
 
