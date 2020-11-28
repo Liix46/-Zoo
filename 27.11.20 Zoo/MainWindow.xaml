@@ -14,7 +14,7 @@
     <Grid>
        
         <Grid.Background>
-            <ImageBrush ImageSource="backgroun1d.jpg" Stretch="None"/>
+            <ImageBrush ImageSource="backgroun1d.jpg" Stretch="None" AlignmentX="Left"/>
         </Grid.Background>
         <ScrollViewer HorizontalScrollBarVisibility="Visible"> </ScrollViewer>
     </Grid>
