@@ -13,13 +13,14 @@
 
     <Window.Resources>
         <Style TargetType="Button">
-            <Setter Property="Width" Value="100"/>
-            <Setter Property="Height" Value="70"/>
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="Height" Value="140"/>
 
             <Setter Property="Panel.ZIndex" Value="100"/>
-            <Setter Property="BorderThickness" Value="0"></Setter>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background" Value="{x:Null}"/>
             <Style.Triggers>
-                <EventTrigger RoutedEvent="Mouse.MouseMove">
+                <!--<EventTrigger RoutedEvent="Mouse.MouseMove">
                     <EventTrigger.Actions>
                         <BeginStoryboard>
                             <Storyboard>
@@ -27,21 +28,54 @@
                             </Storyboard>
                         </BeginStoryboard>
                     </EventTrigger.Actions>
-                </EventTrigger>
+                </EventTrigger>-->
             </Style.Triggers>
         </Style>
-
+        <Style TargetType="Image" x:Key="CrashImage">
+            <Style.Setters>
+                <Setter Property="Height" Value="140"/>
+                <Setter Property="Width" Value="200"/>
+                <Setter Property="Source" Value="crashBuild2.png"/>
+            </Style.Setters>
+        </Style>
+     
     </Window.Resources>
 
     <ScrollViewer HorizontalScrollBarVisibility="Visible">
         <Grid>
             <Grid.Background>
-                <ImageBrush ImageSource="backgroun1d.jpg" Stretch="None" AlignmentX="Left"/>
+                <ImageBrush ImageSource="backgroun1d.jpg" AlignmentX="Left"/>
             </Grid.Background>
 
-            <Button Margin="390,520,1319.6,400.4" RenderTransformOrigin="0.604,-1.1" Background="{x:Null}">
-                <Image Source="crashBuild2.png" Height="70" Width="100" OpacityMask="Black">
-                </Image>
+            <Button Margin="585,525,1860.6,395.4" Name="button1">
+                <Image Style="{StaticResource CrashImage}"/>
+            </Button>
+            <Button Margin="35,850,2410.6,70" x:Name="button2">
+                <Image Style="{StaticResource CrashImage}"/>
+            </Button>
+            <Button Margin="845,920,1600.6,0" x:Name="button3" >
+                <Image Style="{StaticResource CrashImage}"/>
+            </Button>
+            <Button Margin="690,760,1755.6,160" x:Name="button4" >
+                <Image Style="{StaticResource CrashImage}"/>
+            </Button>
+            <Button Margin="505,905,1940.6,15" x:Name="button5" >
+                <Image Style="{StaticResource CrashImage}"/>
+            </Button>
+            <Button Margin="1505,850,940.6,70" x:Name="button6" >
+                <Image Style="{StaticResource CrashImage}"/>
+            </Button>
+            <Button Margin="1175,430,1270.6,490" x:Name="button7" >
+                <Image Style="{StaticResource CrashImage}"/>
+            </Button>
+            <Button Margin="385,300,2060.6,620" x:Name="button8" >
+                <Image Style="{StaticResource CrashImage}"/>
+            </Button>
+            <Button Margin="1075,285,1370.6,635" x:Name="button9" >
+                <Image Style="{StaticResource CrashImage}"/>
+            </Button>
+            <Button Margin="910,630,1535.6,290" x:Name="button10" >
+                <Image Style="{StaticResource CrashImage}"/>
             </Button>
         </Grid>
     </ScrollViewer>
