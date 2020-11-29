@@ -9,16 +9,32 @@
         WindowStartupLocation="CenterScreen" WindowState="Maximized" 
         Loaded="MainWindow_Loaded" Closing="MainWindow_Closing" Closed="MainWindow_Closed" 
         Height="{Binding SystemParameters.PrimaryScreenHeight}" 
-        Width="{Binding SystemParameters.PrimaryScreenWidth}" Icon="main icon.png"
-        >
-    <Grid>
-       
-        <Grid.Background>
-            <ImageBrush ImageSource="backgroun1d.jpg" Stretch="None" AlignmentX="Left"/>
-        </Grid.Background>
-        <ScrollViewer HorizontalScrollBarVisibility="Visible"> </ScrollViewer>
-    </Grid>
+        Width="{Binding SystemParameters.PrimaryScreenWidth}" Icon="main icon.png">
 
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter ContentSource="Content"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
 
+    <ScrollViewer HorizontalScrollBarVisibility="Visible">
+        <Grid>
 
+            <Grid.Background>
+                <ImageBrush ImageSource="backgroun1d.jpg" Stretch="None" AlignmentX="Left"/>
+            </Grid.Background>
+
+            <Button HorizontalAlignment="Left" Margin="397,265,0,143.8" Width="80" Height="80" RenderTransformOrigin="0.604,-1.1" Background="#00000000" Panel.ZIndex="100">
+                <Image Source="crashBuild.png" Margin="-61,7,-57,-107" OpacityMask="Black"  />
+            </Button>
+        </Grid>
+    </ScrollViewer>
 </Window>

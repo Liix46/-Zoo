@@ -16,9 +16,7 @@ using System.Windows.Shapes;
 
 namespace _27._11._20_Zoo
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -41,8 +39,6 @@ namespace _27._11._20_Zoo
         {
             
         }
-
-
 
     }
 }
