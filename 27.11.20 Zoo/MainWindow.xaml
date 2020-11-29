@@ -8,8 +8,8 @@
         Title="Wildscapes" MinHeight="450" MinWidth="800"
         WindowStartupLocation="CenterScreen" WindowState="Maximized" 
         Loaded="MainWindow_Loaded" Closing="MainWindow_Closing" Closed="MainWindow_Closed" 
-        Height="{Binding SystemParameters.PrimaryScreenHeight}" 
-        Width="{Binding SystemParameters.PrimaryScreenWidth}" Icon="main icon.png">
+        Height="1036.4" 
+        Width="1813.2" Icon="main icon.png">
 
     <Window.Resources>
         <Style TargetType="Button">
@@ -17,18 +17,31 @@
             <Setter Property="Height" Value="80"/>
             <Setter Property="Background" Value="#00000000"/>
             <Setter Property="Panel.ZIndex" Value="100"/>
+            <Setter Property="BorderThickness" Value="0"></Setter>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="Mouse.MouseMove">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetProperty="Background.Color" To="#00000000" AutoReverse="True"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Style.Triggers>
         </Style>
+       
+               
     </Window.Resources>
 
     <ScrollViewer HorizontalScrollBarVisibility="Visible">
         <Grid>
-
             <Grid.Background>
                 <ImageBrush ImageSource="backgroun1d.jpg" Stretch="None" AlignmentX="Left"/>
             </Grid.Background>
 
-            <Button Margin="130,265,0,143" RenderTransformOrigin="0.604,-1.1">
-                <Image Source="crashBuild.png" Margin="-61,7,-57,-107" OpacityMask="Black"  />
+            <Button Margin="400,510,1309.6,390" RenderTransformOrigin="0.604,-1.1">
+                <Image Source="crashBuild.png" Margin="-61,7,-57,-107" OpacityMask="Black"/>
             </Button>
         </Grid>
     </ScrollViewer>
