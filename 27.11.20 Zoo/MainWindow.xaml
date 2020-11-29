@@ -13,15 +13,10 @@
 
     <Window.Resources>
         <Style TargetType="Button">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}">
-                            <ContentPresenter ContentSource="Content"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
+            <Setter Property="Width" Value="80"/>
+            <Setter Property="Height" Value="80"/>
+            <Setter Property="Background" Value="#00000000"/>
+            <Setter Property="Panel.ZIndex" Value="100"/>
         </Style>
     </Window.Resources>
 
@@ -32,7 +27,7 @@
                 <ImageBrush ImageSource="backgroun1d.jpg" Stretch="None" AlignmentX="Left"/>
             </Grid.Background>
 
-            <Button HorizontalAlignment="Left" Margin="397,265,0,143.8" Width="80" Height="80" RenderTransformOrigin="0.604,-1.1" Background="#00000000" Panel.ZIndex="100">
+            <Button Margin="130,265,0,143" RenderTransformOrigin="0.604,-1.1">
                 <Image Source="crashBuild.png" Margin="-61,7,-57,-107" OpacityMask="Black"  />
             </Button>
         </Grid>
