@@ -12,71 +12,64 @@
         Width="1813.2" Icon="main icon.png">
 
     <Window.Resources>
-        <Style TargetType="Button">
-            <Setter Property="Width" Value="200"/>
-            <Setter Property="Height" Value="140"/>
-
-            <Setter Property="Panel.ZIndex" Value="100"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Background" Value="{x:Null}"/>
-            <Style.Triggers>
-                <!--<EventTrigger RoutedEvent="Mouse.MouseMove">
-                    <EventTrigger.Actions>
-                        <BeginStoryboard>
-                            <Storyboard>
-                                <ColorAnimation Storyboard.TargetProperty="Background.Color" To="#00000000" AutoReverse="True"/>
-                            </Storyboard>
-                        </BeginStoryboard>
-                    </EventTrigger.Actions>
-                </EventTrigger>-->
-            </Style.Triggers>
-        </Style>
-        <Style TargetType="Image" x:Key="CrashImage">
-            <Style.Setters>
-                <Setter Property="Height" Value="140"/>
-                <Setter Property="Width" Value="200"/>
-                <Setter Property="Source" Value="crashBuild2.png"/>
-            </Style.Setters>
-        </Style>
-     
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Dictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Window.Resources>
+    <Window.Background>
+        <ImageBrush ImageSource="loading.png"/>
+    </Window.Background>
 
-    <ScrollViewer HorizontalScrollBarVisibility="Visible">
+
+
+    <ScrollViewer x:Name="mainScroll" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled">
         <Grid>
-            <Grid.Background>
-                <ImageBrush ImageSource="backgroun1d.jpg" AlignmentX="Left"/>
-            </Grid.Background>
+            <Button x:Name="buttonLoading"  HorizontalAlignment="Left" VerticalAlignment="Top" 
+                Margin="550,500,0,0" Foreground="White" FontSize="72" 
+                Click="buttonLoading_Click" Background="#00DDDDDD" BorderBrush="#00707070" IsEnabled="False"
+                Template="{StaticResource loadingButton}" Width="360"/>
 
-            <Button Margin="585,525,1860.6,395.4" Name="button1">
-                <Image Style="{StaticResource CrashImage}"/>
-            </Button>
-            <Button Margin="35,850,2410.6,70" x:Name="button2">
-                <Image Style="{StaticResource CrashImage}"/>
-            </Button>
-            <Button Margin="845,920,1600.6,0" x:Name="button3" >
-                <Image Style="{StaticResource CrashImage}"/>
-            </Button>
-            <Button Margin="690,760,1755.6,160" x:Name="button4" >
-                <Image Style="{StaticResource CrashImage}"/>
-            </Button>
-            <Button Margin="505,905,1940.6,15" x:Name="button5" >
-                <Image Style="{StaticResource CrashImage}"/>
-            </Button>
-            <Button Margin="1505,850,940.6,70" x:Name="button6" >
-                <Image Style="{StaticResource CrashImage}"/>
-            </Button>
-            <Button Margin="1175,430,1270.6,490" x:Name="button7" >
-                <Image Style="{StaticResource CrashImage}"/>
-            </Button>
-            <Button Margin="385,300,2060.6,620" x:Name="button8" >
-                <Image Style="{StaticResource CrashImage}"/>
-            </Button>
-            <Button Margin="1075,285,1370.6,635" x:Name="button9" >
-                <Image Style="{StaticResource CrashImage}"/>
-            </Button>
-            <Button Margin="910,630,1535.6,290" x:Name="button10" >
-                <Image Style="{StaticResource CrashImage}"/>
-            </Button>
+            <Grid  x:Name="mainGrid" Visibility="Hidden">
+
+                <Grid.Background>
+                    <ImageBrush ImageSource="backgroun1d.jpg" AlignmentX="Left"/>
+                </Grid.Background>
+
+
+                <Button Margin="585,525,1860.6,395.4" Name="button1">
+                    <Image Style="{StaticResource CrashImage}"/>
+                </Button>
+                <Button Margin="35,850,2410.6,70" x:Name="button2">
+                    <Image Style="{StaticResource CrashImage}"/>
+                </Button>
+                <Button Margin="845,920,1600.6,0" x:Name="button3" >
+                    <Image Style="{StaticResource CrashImage}"/>
+                </Button>
+                <Button Margin="690,760,1755.6,160" x:Name="button4" >
+                    <Image Style="{StaticResource CrashImage}"/>
+                </Button>
+                <Button Margin="505,905,1940.6,15" x:Name="button5" >
+                    <Image Style="{StaticResource CrashImage}"/>
+                </Button>
+                <Button Margin="1505,850,940.6,70" x:Name="button6" >
+                    <Image Style="{StaticResource CrashImage}"/>
+                </Button>
+                <Button Margin="1175,430,1270.6,490" x:Name="button7" >
+                    <Image Style="{StaticResource CrashImage}"/>
+                </Button>
+                <Button Margin="385,300,2060.6,620" x:Name="button8" >
+                    <Image Style="{StaticResource CrashImage}"/>
+                </Button>
+                <Button Margin="1075,285,1370.6,635" x:Name="button9" >
+                    <Image Style="{StaticResource CrashImage}"/>
+                </Button>
+                <Button Margin="910,630,1535.6,290" x:Name="button10" >
+                    <Image Style="{StaticResource CrashImage}"/>
+                </Button>
+            </Grid>
         </Grid>
     </ScrollViewer>
+
 </Window>
