@@ -25,6 +25,10 @@ namespace _27._11._20_Zoo
         public MainWindow()
         {
             InitializeComponent();
+            mainGrid.Visibility = Visibility.Visible;
+            mainScroll.VerticalScrollBarVisibility = ScrollBarVisibility.Visible;
+            mainScroll.HorizontalScrollBarVisibility = ScrollBarVisibility.Visible;
+            buttonLoading.Visibility = Visibility.Hidden;
         }
 
         private void MainWindow_Initialized(object sender, EventArgs e)
