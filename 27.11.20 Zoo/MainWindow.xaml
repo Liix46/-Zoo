@@ -69,15 +69,50 @@
                     <Image Style="{StaticResource CrashImage}"/>
                 </Button>
 
-                <ComboBox Name="comboBox" Height="30" Width="150" Text="My aviaries" Visibility="Hidden">
-                    <ComboBoxItem Height="50" Selected="Item_Click">
-                        <Button Background="Transparent" >
-                            <Image Source="Locations\forest.png" ></Image>
+                <ComboBox Name="comboBoxAviaries" Height="20" Width="20" Text="My aviaries" Visibility="Hidden">
+                    <ComboBoxItem Height="50" Width="100" Selected="comboBoxAviary_Click">
+                        <Button Background="Transparent" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                            <Image Source="Locations\forest.png" Height="50" Width="100"></Image>
                         </Button>
                     </ComboBoxItem>
-                    <ComboBoxItem Height="50">
-                        <Button Background="Transparent">
-                            <Image Source="Locations\glacier.png"></Image>
+                    <ComboBoxItem Height="50" Width="100" Selected="comboBoxAviary_Click">
+                        <Button Background="Transparent" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                            <Image Source="Locations\glacier.png" Height="50" Width="100"></Image>
+                        </Button>
+                    </ComboBoxItem>
+                    <ComboBoxItem Height="50" Width="100" Selected="comboBoxAviary_Click">
+                        <Button Background="Transparent" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                            <Image Source="Locations\island.png" Height="50" Width="100"></Image>
+                        </Button>
+                    </ComboBoxItem>
+                    <ComboBoxItem Height="50" Width="100" Selected="comboBoxAviary_Click">
+                        <Button Background="Transparent" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                            <Image Source="Locations\lake.png" Height="50" Width="100"></Image>
+                        </Button>
+                    </ComboBoxItem>
+                    <ComboBoxItem Height="50" Width="100" Selected="comboBoxAviary_Click">
+                        <Button Background="Transparent" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                            <Image Source="Locations\mountance.png" Height="50" Width="100"></Image>
+                        </Button>
+                    </ComboBoxItem>
+                    <ComboBoxItem Height="50" Width="100" Selected="comboBoxAviary_Click">
+                        <Button Background="Transparent" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                            <Image Source="Locations\redScaur.png" Height="50" Width="100"></Image>
+                        </Button>
+                    </ComboBoxItem>
+                    <ComboBoxItem Height="50" Width="100" Selected="comboBoxAviary_Click">
+                        <Button Background="Transparent" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                            <Image Source="Locations\river.png" Height="50" Width="100"></Image>
+                        </Button>
+                    </ComboBoxItem>
+                    <ComboBoxItem Height="50" Width="100" Selected="comboBoxAviary_Click">
+                        <Button Background="Transparent" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                            <Image Source="Locations\scaur.png" Height="50" Width="100"></Image>
+                        </Button>
+                    </ComboBoxItem>
+                    <ComboBoxItem Height="50" Width="100" Selected="comboBoxAviary_Click">
+                        <Button Background="Transparent" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                            <Image Source="Locations\wilderness.png" Height="50" Width="100"></Image>
                         </Button>
                     </ComboBoxItem>
                 </ComboBox>

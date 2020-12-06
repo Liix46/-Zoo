@@ -22,7 +22,7 @@ namespace _27._11._20_Zoo
     public partial class MainWindow : Window
     {
         DispatcherTimer timer;
-        Button btn;
+        static private Button btn;
         public MainWindow()
         {
             InitializeComponent();
@@ -75,8 +75,14 @@ namespace _27._11._20_Zoo
             double x = btn.Margin.Left;
             double y = btn.Margin.Top;
             Thickness thicknessLeft = new Thickness(x + btn.Width + 10, y, 0, 0);
-            comboBox.Margin = thicknessLeft;
-            comboBox.Visibility = Visibility.Visible;
+            comboBoxAviaries.Margin = thicknessLeft;
+            comboBoxAviaries.Visibility = Visibility.Visible;
+        }
+
+        private void comboBoxAviary_Click(object sender, RoutedEventArgs e)
+        {
+            comboBoxAviaries.Visibility = Visibility.Hidden;
+            //btn.Background = new ImageBrush(new BitmapImage(new Uri(@"Locations\forest.png")));
         }
     }
 }
