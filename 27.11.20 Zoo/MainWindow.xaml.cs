@@ -71,10 +71,13 @@ namespace _27._11._20_Zoo
         private void aviaryBtn_Click(object sender, RoutedEventArgs e)
         {
             btn = (Button)sender;
+            
 
-            double x = btn.Margin.Left;
-            double y = btn.Margin.Top;
-            Thickness thicknessLeft = new Thickness(x + btn.Width + 10, y, 0, 0);
+            double left = btn.Margin.Left;
+            double top = btn.Margin.Top;
+            double right = btn.Margin.Right;
+            double bottom = btn.Margin.Bottom;
+            Thickness thicknessLeft = new Thickness(left + btn.Width + 10, top, right, bottom);
             comboBoxAviaries.Margin = thicknessLeft;
             comboBoxAviaries.Visibility = Visibility.Visible;
         }
