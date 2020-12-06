@@ -116,5 +116,17 @@
   <ItemGroup>
     <Resource Include="loading.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Locations\forest.png" />
+    <Resource Include="Locations\glacier.png" />
+    <Resource Include="Locations\island.png" />
+    <Resource Include="Locations\lake.png" />
+    <Resource Include="Locations\mountance.png" />
+    <Resource Include="Locations\redScaur.png" />
+    <Resource Include="Locations\river.png" />
+    <Resource Include="Locations\scaur.png" />
+    <Resource Include="Locations\volcano.png" />
+    <Resource Include="Locations\wilderness.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

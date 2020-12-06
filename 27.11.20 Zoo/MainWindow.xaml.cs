@@ -22,6 +22,7 @@ namespace _27._11._20_Zoo
     public partial class MainWindow : Window
     {
         DispatcherTimer timer;
+        Button btn;
         public MainWindow()
         {
             InitializeComponent();
@@ -65,6 +66,17 @@ namespace _27._11._20_Zoo
         {
             buttonLoading.IsEnabled = true;
             timer.Stop();
+        }
+
+        private void aviaryBtn_Click(object sender, RoutedEventArgs e)
+        {
+            btn = (Button)sender;
+
+            double x = btn.Margin.Left;
+            double y = btn.Margin.Top;
+            Thickness thicknessLeft = new Thickness(x + btn.Width + 10, y, 0, 0);
+            comboBox.Margin = thicknessLeft;
+            comboBox.Visibility = Visibility.Visible;
         }
     }
 }
