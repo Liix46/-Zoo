@@ -81,7 +81,11 @@ namespace _27._11._20_Zoo
 
         private void comboBoxAviary_Click(object sender, RoutedEventArgs e)
         {
+            //при выборе вольера пропадает comboBoxAviaries
+            //и картинка разрушенного здания заменяеться на выбранную
             comboBoxAviaries.Visibility = Visibility.Hidden;
+
+            //не находит картинку и виснит... Нашла как сделать с битмап, но картинки в пнг
             //btn.Background = new ImageBrush(new BitmapImage(new Uri(@"Locations\forest.png")));
         }
     }
