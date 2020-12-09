@@ -39,7 +39,8 @@
         <Style.Setters>
             <Setter Property="Height" Value="140"/>
             <Setter Property="Width" Value="200"/>
-            <Setter Property="Source" Value="crashBuild2.png"/>
+            <!--<Setter Property="Source" Value="crashBuild.png"/>-->
+            <!--<Setter Property="Source" Value="C:\Users\саша\source\repos\ZooProject\27.11.20 Zoo\crashBuild.png"/>-->
         </Style.Setters>
     </Style>
 

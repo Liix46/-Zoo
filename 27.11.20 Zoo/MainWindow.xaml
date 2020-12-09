@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_27._11._20_Zoo"
         mc:Ignorable="d"
-        Title="Wildscapes" MinHeight="450" MinWidth="800"
+        Title="Wildscapes" MinHeight="650" MinWidth="800"
         WindowStartupLocation="CenterScreen" WindowState="Maximized" 
         Loaded="MainWindow_Loaded" Closing="MainWindow_Closing" Closed="MainWindow_Closed" 
         Height="1036.4" 
-        Width="1813.2" Icon="main icon.png">
+        Width="1813.2" Icon="MainIcon.png">
 
     <Window.Resources>
         <ResourceDictionary>
@@ -24,98 +24,222 @@
 
 
 
-    <ScrollViewer x:Name="mainScroll" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled">
+    <ScrollViewer x:Name="mainScroll" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled" ScrollChanged="MainScroll_ScrollChanged">
         <Grid>
+            <Grid.Background>
+                <ImageBrush/>
+            </Grid.Background>
             <Button x:Name="buttonLoading"  HorizontalAlignment="Left" VerticalAlignment="Top" 
                 Margin="550,500,0,0" Foreground="White" FontSize="72" 
-                Click="buttonLoading_Click" Background="#00DDDDDD" BorderBrush="#00707070" IsEnabled="False"
+                Click="ButtonLoading_Click" Background="#00DDDDDD" BorderBrush="#00707070" IsEnabled="False"
                 Template="{StaticResource loadingButton}" Width="360"/>
 
             <Grid  x:Name="mainGrid" Visibility="Hidden">
 
                 <Grid.Background>
-                    <ImageBrush ImageSource="backgroun1d.jpg" AlignmentX="Left"/>
+                    <ImageBrush ImageSource="background.jpg" AlignmentX="Left"/>
                 </Grid.Background>
+                <Canvas>
+                    <Label x:Name="levelImageLabel" Height="60" Width="60" Canvas.Top="15" Canvas.Left="15"
+                           FontSize="20" Padding="23,18,0,0" Foreground="White">
+                        <Label.Background>
+                            <ImageBrush ImageSource="level.ico"/>
+                        </Label.Background>
+                    </Label>
+                    <Button x:Name="notificationLabel" Height="60" Width="60"  Canvas.Top="475" Canvas.Left="15">
+                        <Button.Background>
+                            <ImageBrush ImageSource="notifications.ico"/>
+                        </Button.Background>
+                    </Button>
+                    <Border Height="50" MinWidth="180" Canvas.Top="20" Canvas.Left="1250" Background="Transparent" BorderBrush="Black"
+                            BorderThickness="5" CornerRadius="10" x:Name="borderNickNameLabel">
+                        <Label x:Name="nickNameLabel" FontSize="20" Foreground="Black" HorizontalContentAlignment="Right">
+                            TestCount
+                        </Label>
+                    </Border>
+                    <Border Height="50" MinWidth="180" Canvas.Top="20" Canvas.Left="80" Background="White" BorderBrush="Black"
+                            BorderThickness="5" x:Name="borderGoldLabel">
+                        <Label x:Name="goldLabel" FontSize="20" Foreground="Black">
+                            TestName
+                        </Label>
+                    </Border>
+                    <Label x:Name="goldImageLabel" Height="60" Width="60" Canvas.Top="15" Canvas.Left="1250">
+                        <Label.Background>
+                            <ImageBrush ImageSource="coins.ico"/>
+                        </Label.Background>
+                    </Label>
+                    <Border Height="100" Width="300" Background="White" BorderThickness="5" BorderBrush="Black" 
+                            Canvas.Left="1200" Canvas.Top="665" x:Name="borderSettings">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
 
+                            <Button x:Name="infoButton" Height="60" Width="60" >
+                                <Button.Background>
+                                    <ImageBrush ImageSource="information.ico"/>
+                                </Button.Background>
+                            </Button>
+                            <Button x:Name="settingsButton" Grid.Column="1" Height="60" Width="60" >
+                                <Button.Background>
+                                    <ImageBrush ImageSource="settings.ico"/>
+                                </Button.Background>
+                            </Button>
+                            <Button x:Name="exitButton" Grid.Column="2" Height="60" Width="60" Click="ExitButton_Click">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="exit.ico"/>
+                                </Button.Background>
+                            </Button>
+                        </Grid>
+                    </Border>
+                </Canvas>
 
-                <Button Margin="585,525,1860.6,395.4" Name="aviaryBtn1" Click="aviaryBtn_Click">
-                    <Image Style="{StaticResource CrashImage}"/>
+                <Button Margin="585,525,1860.6,395.4" Name="aviaryBtn1" Click="AviaryBtn_Click" MouseDoubleClick="DoubleClickAviary">
+                    <Image Style="{StaticResource CrashImage}" Source="crashBuild.png"/>
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <Border Height="150" Width="200" Background="White">
+                            </Border>
+                        </ToolTip>
+                    </Button.ToolTip>
                 </Button>
-                <Button Margin="35,850,2410.6,70" x:Name="aviaryBtn2" Click="aviaryBtn_Click">
-                    <Image Style="{StaticResource CrashImage}"/>
+                <Button Margin="35,850,2410.6,70" x:Name="aviaryBtn2" Click="AviaryBtn_Click"  MouseDoubleClick="DoubleClickAviary">
+                    <Image Style="{StaticResource CrashImage}" Source="crashBuild.png"/>
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <Border Height="150" Width="200" Background="White">
+                            </Border>
+                        </ToolTip>
+                    </Button.ToolTip>
                 </Button>
-                <Button Margin="845,920,1600.6,0" x:Name="aviaryBtn3" Click="aviaryBtn_Click">
-                    <Image Style="{StaticResource CrashImage}"/>
+                <Button Margin="845,920,1600.6,0" x:Name="aviaryBtn3" Click="AviaryBtn_Click"  MouseDoubleClick="DoubleClickAviary">
+                    <Image Style="{StaticResource CrashImage}" Source="crashBuild.png"/>
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <Border Height="150" Width="200" Background="White">
+                            </Border>
+                        </ToolTip>
+                    </Button.ToolTip>
                 </Button>
-                <Button Margin="690,760,1755.6,160" x:Name="aviaryBtn4" Click="aviaryBtn_Click">
-                    <Image Style="{StaticResource CrashImage}"/>
+                <Button Margin="690,760,1755.6,160" x:Name="aviaryBtn4" Click="AviaryBtn_Click"  MouseDoubleClick="DoubleClickAviary">
+                    <Image Style="{StaticResource CrashImage}" Source="crashBuild.png"/>
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <Border Height="150" Width="200" Background="White">
+                            </Border>
+                        </ToolTip>
+                    </Button.ToolTip>
                 </Button>
-                <Button Margin="505,905,1940.6,15" x:Name="aviaryBtn5" Click="aviaryBtn_Click">
-                    <Image Style="{StaticResource CrashImage}"/>
+                <Button Margin="505,905,1940.6,15" x:Name="aviaryBtn5" Click="AviaryBtn_Click" MouseDoubleClick="DoubleClickAviary">
+                    <Image Style="{StaticResource CrashImage}" Source="crashBuild.png"/>
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <Border Height="150" Width="200" Background="White">
+                            </Border>
+                        </ToolTip>
+                    </Button.ToolTip>
                 </Button>
-                <Button Margin="1505,850,940.6,70" x:Name="aviaryBtn6" Click="aviaryBtn_Click">
-                    <Image Style="{StaticResource CrashImage}"/>
+                <Button Margin="1505,850,940.6,70" x:Name="aviaryBtn6" Click="AviaryBtn_Click" MouseDoubleClick="DoubleClickAviary">
+                    <Image Style="{StaticResource CrashImage}" Source="crashBuild.png"/>
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <Border Height="150" Width="200" Background="White">
+                            </Border>
+                        </ToolTip>
+                    </Button.ToolTip>
                 </Button>
-                <Button Margin="1175,430,1270.6,490" x:Name="aviaryBtn7" Click="aviaryBtn_Click">
-                    <Image Style="{StaticResource CrashImage}"/>
+                <Button Margin="1175,430,1270.6,490" x:Name="aviaryBtn7" Click="AviaryBtn_Click" MouseDoubleClick="DoubleClickAviary">
+                    <Image Style="{StaticResource CrashImage}" Source="crashBuild.png"/>
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <Border Height="150" Width="200" Background="White">
+                            </Border>
+                        </ToolTip>
+                    </Button.ToolTip>
                 </Button>
-                <Button Margin="385,300,2060.6,620" x:Name="aviaryBtn8" Click="aviaryBtn_Click">
-                    <Image Style="{StaticResource CrashImage}"/>
+                <Button Margin="385,300,2060.6,620" x:Name="aviaryBtn8" Click="AviaryBtn_Click" MouseDoubleClick="DoubleClickAviary">
+                    <Image Style="{StaticResource CrashImage}" Source="crashBuild.png"/>
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <Border Height="150" Width="200" Background="White">
+                            </Border>
+                        </ToolTip>
+                    </Button.ToolTip>
                 </Button>
-                <Button Margin="1075,285,1370.6,635" x:Name="aviaryBtn9" Click="aviaryBtn_Click">
-                    <Image Style="{StaticResource CrashImage}"/>
+                <Button Margin="1075,285,1370.6,635" x:Name="aviaryBtn9" Click="AviaryBtn_Click" MouseDoubleClick="DoubleClickAviary">
+                    <Image Style="{StaticResource CrashImage}" Source="crashBuild.png"/>
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <Border Height="150" Width="200" Background="White">
+                            </Border>
+                        </ToolTip>
+                    </Button.ToolTip>
                 </Button>
-                <Button Margin="910,630,1535.6,290" x:Name="aviaryBtn10" Click="aviaryBtn_Click">
-                    <Image Style="{StaticResource CrashImage}"/>
+                <Button Margin="910,630,1535.6,290" x:Name="aviaryBtn10" Click="AviaryBtn_Click" MouseDoubleClick="DoubleClickAviary">
+                    <Image Style="{StaticResource CrashImage}" Source="crashBuild.png"/>
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <Border Height="150" Width="200" Background="White">
+                            </Border>
+                        </ToolTip>
+                    </Button.ToolTip>
                 </Button>
-
-                <ComboBox Name="comboBoxAviaries" Height="20" Width="20" Text="My aviaries" Visibility="Hidden">
-                    <ComboBoxItem Height="50" Width="100" Selected="comboBoxAviary_Click">
-                        <Button Background="Transparent" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                            <Image Source="Locations\forest.png" Height="50" Width="100"></Image>
-                        </Button>
+                <!--#region Для Саши -->
+                <ComboBox Name="comboBoxAviaries" Height="20" Width="20" Text="My aviaries" MaxDropDownHeight="100" Visibility="Hidden">
+                    <ComboBoxItem Height="50" Width="60" Selected="ComboBoxAviary_Click">
+                        <ComboBoxItem.Content>
+                            <Image Source="Locations\forest.png" VerticalAlignment="Center"></Image>
+                        </ComboBoxItem.Content>
                     </ComboBoxItem>
-                    <ComboBoxItem Height="50" Width="100" Selected="comboBoxAviary_Click">
-                        <Button Background="Transparent" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                            <Image Source="Locations\glacier.png" Height="50" Width="100"></Image>
-                        </Button>
+                    <ComboBoxItem Height="50" Width="60" Selected="ComboBoxAviary_Click">
+                        <ComboBoxItem.Content>
+                            <Image Source="Locations\glacier.png" VerticalAlignment="Center"></Image>
+                        </ComboBoxItem.Content>
                     </ComboBoxItem>
-                    <ComboBoxItem Height="50" Width="100" Selected="comboBoxAviary_Click">
-                        <Button Background="Transparent" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                            <Image Source="Locations\island.png" Height="50" Width="100"></Image>
-                        </Button>
+                    <ComboBoxItem Height="50" Width="60" Selected="ComboBoxAviary_Click">
+                        <ComboBoxItem.Content>
+                            <Image Source="Locations\island.png" VerticalAlignment="Center"></Image>
+                        </ComboBoxItem.Content>
                     </ComboBoxItem>
-                    <ComboBoxItem Height="50" Width="100" Selected="comboBoxAviary_Click">
-                        <Button Background="Transparent" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                            <Image Source="Locations\lake.png" Height="50" Width="100"></Image>
-                        </Button>
+                    <ComboBoxItem Height="50" Width="60" Selected="ComboBoxAviary_Click">
+                        <ComboBoxItem.Content>
+                            <Image Source="Locations\lake.png" VerticalAlignment="Center"></Image>
+                        </ComboBoxItem.Content>
                     </ComboBoxItem>
-                    <ComboBoxItem Height="50" Width="100" Selected="comboBoxAviary_Click">
-                        <Button Background="Transparent" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                            <Image Source="Locations\mountance.png" Height="50" Width="100"></Image>
-                        </Button>
+                    <ComboBoxItem Height="50" Width="60" Selected="ComboBoxAviary_Click">
+                        <ComboBoxItem.Content>
+                            <Image Source="Locations\mountance.png" VerticalAlignment="Center"></Image>
+                        </ComboBoxItem.Content>
                     </ComboBoxItem>
-                    <ComboBoxItem Height="50" Width="100" Selected="comboBoxAviary_Click">
-                        <Button Background="Transparent" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                            <Image Source="Locations\redScaur.png" Height="50" Width="100"></Image>
-                        </Button>
+                    <ComboBoxItem Height="50" Width="60" Selected="ComboBoxAviary_Click">
+                        <ComboBoxItem.Content>
+                            <Image Source="Locations\redScaur.png" VerticalAlignment="Center"></Image>
+                        </ComboBoxItem.Content>
                     </ComboBoxItem>
-                    <ComboBoxItem Height="50" Width="100" Selected="comboBoxAviary_Click">
-                        <Button Background="Transparent" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                            <Image Source="Locations\river.png" Height="50" Width="100"></Image>
-                        </Button>
+                    <ComboBoxItem Height="50" Width="60" Selected="ComboBoxAviary_Click">
+                        <ComboBoxItem.Content>
+                            <Image Source="Locations\river.png" VerticalAlignment="Center"></Image>
+                        </ComboBoxItem.Content>
                     </ComboBoxItem>
-                    <ComboBoxItem Height="50" Width="100" Selected="comboBoxAviary_Click">
-                        <Button Background="Transparent" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                            <Image Source="Locations\scaur.png" Height="50" Width="100"></Image>
-                        </Button>
+                    <ComboBoxItem Height="50" Width="60" Selected="ComboBoxAviary_Click">
+                        <ComboBoxItem.Content>
+                            <Image Source="Locations\scaur.png" VerticalAlignment="Center"></Image>
+                        </ComboBoxItem.Content>
                     </ComboBoxItem>
-                    <ComboBoxItem Height="50" Width="100" Selected="comboBoxAviary_Click">
-                        <Button Background="Transparent" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                            <Image Source="Locations\wilderness.png" Height="50" Width="100"></Image>
-                        </Button>
+                    <ComboBoxItem Height="50" Width="60" Selected="ComboBoxAviary_Click">
+                        <ComboBoxItem.Content>
+                            <Image Source="Locations\wilderness.png" VerticalAlignment="Center"></Image>
+                        </ComboBoxItem.Content>
+                    </ComboBoxItem>
+                    <ComboBoxItem Height="50" Width="60" Selected="ComboBoxAviary_Click">
+                        <ComboBoxItem.Content>
+                            <Image Source="Locations\volcano.png" VerticalAlignment="Center"></Image>
+                        </ComboBoxItem.Content>
                     </ComboBoxItem>
                 </ComboBox>
+                <!--#endregion-->
             </Grid>
         </Grid>
     </ScrollViewer>
