@@ -22,8 +22,6 @@
         <ImageBrush ImageSource="loading.png"/>
     </Window.Background>
 
-
-
     <ScrollViewer x:Name="mainScroll" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled" ScrollChanged="MainScroll_ScrollChanged">
         <Grid>
             <Grid.Background>
