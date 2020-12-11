@@ -24,11 +24,10 @@ namespace _27._11._20_Zoo
     public partial class MainWindow : Window
     {
         DispatcherTimer timer;
-        private Button btn;
-        private ComboBoxItem cbi;
-        private Image selectedImage = new Image();
-        private Image btnImage = new Image();
-        private DispatcherTimer buildTimer = new DispatcherTimer();
+        static private Button btn;
+        static private ComboBoxItem cbi;
+        static private Image selectedImage = new Image();
+        static private Image btnImage = new Image();
         public MainWindow()
         {
             InitializeComponent();
@@ -50,6 +49,7 @@ namespace _27._11._20_Zoo
 
                 XmlDocument xDoc = new XmlDocument();
                 xDoc.Load("users.xml");
+
 
                 // получаем корневой элемент
                 XmlElement xRoot = xDoc.DocumentElement;
@@ -247,20 +247,7 @@ namespace _27._11._20_Zoo
             selectedImage = (Image)cbi.Content;
 
             btnImage.Source = selectedImage.Source;
-            btnImage.Opacity = 0;
             btn.Content = btnImage;
-
-            buildTimer.Tick += new EventHandler(buildTimer_Tick);
-            buildTimer.Interval = new TimeSpan(0, 0, 1);
-            buildTimer.Start();
-        }
-
-        private void buildTimer_Tick(object sender, EventArgs e)
-        {
-            btnImage.Opacity += 0.25;
-
-            if (btnImage.Opacity == 1)
-                buildTimer.Stop();
         }
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)

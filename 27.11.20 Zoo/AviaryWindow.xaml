@@ -18,7 +18,7 @@
             <ImageBrush ImageSource="Jungle_background.jpg"/>
         </Grid.Background>
         <ListBox Grid.ColumnSpan="3" Grid.Column="1" Background="#FF02150E" Foreground="White" FontSize="25" FontFamily="Castellar" FontStyle="Italic">
-            <ListBoxItem Margin="10,0,10,0" Padding="0,10,0,10">
+            <ListBoxItem Margin="10,0,10,0" Padding="0,10,0,10" MouseDoubleClick="ListBoxItem_MouseDoubleClick_BuyAnimals">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="MainIcon.png" Width="30" Height="30"/>
                     <TextBlock Margin="20,0,0,0">Купить животное</TextBlock>

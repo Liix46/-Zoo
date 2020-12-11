@@ -14,19 +14,14 @@ using System.Windows.Shapes;
 
 namespace _27._11._20_Zoo
 {
-    public partial class AviaryWindow : Window
+    /// <summary>
+    /// Interaction logic for BuyAnimalsWindow.xaml
+    /// </summary>
+    public partial class BuyAnimalsWindow : Window
     {
-        public AviaryWindow()
+        public BuyAnimalsWindow()
         {
             InitializeComponent();
-        }
-
-        private void ListBoxItem_MouseDoubleClick_BuyAnimals(object sender, MouseButtonEventArgs e)
-        {
-            this.Close();
-            BuyAnimalsWindow animalsWindow = new BuyAnimalsWindow();
-            animalsWindow.ShowDialog();
-           
         }
     }
 }

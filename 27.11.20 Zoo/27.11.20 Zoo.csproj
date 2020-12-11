@@ -55,13 +55,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Aviary.cs" />
+    <Compile Include="BuyAnimalsWindow.xaml.cs">
+      <DependentUpon>BuyAnimalsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Registration.xaml.cs">
       <DependentUpon>Registration.xaml</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
     <Compile Include="UsersRepository.cs" />
     <Page Include="AviaryWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BuyAnimalsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -170,6 +176,54 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Jungle_background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="lion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="antelope.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="bison.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="buffalo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="elephant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="giraffe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="gorilla.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="guepard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="hippo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="hyena.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="mandrill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="monkey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="rhinoceros.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="turtle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="warthog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="zebra.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

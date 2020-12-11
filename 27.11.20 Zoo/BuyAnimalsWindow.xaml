@@ -1,0 +1,121 @@
+﻿<Window x:Class="_27._11._20_Zoo.BuyAnimalsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_27._11._20_Zoo"
+        mc:Ignorable="d"
+        Title="BuyAnimalsWindow" Height="250" Width="400">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="Jungle_background.jpg"/>
+        </Grid.Background>
+        <ListBox Grid.ColumnSpan="3" Grid.Column="1" Background="#FF02150E" Foreground="White" FontSize="16" FontFamily="Castellar" FontStyle="Italic">
+          
+            <ListBoxItem Margin="10,0,10,0" Padding="0,10,0,10">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="antelope.png" Width="30" Height="30"/>
+                    <TextBlock Margin="20,0,0,0" VerticalAlignment="Center">Antelope</TextBlock>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem Margin="10,0,10,0" Padding="0,10,0,10">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="bison.png" Width="30" Height="30"/>
+                    <TextBlock Margin="20,0,0,0" VerticalAlignment="Center">Bison</TextBlock>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem Margin="10,0,10,0" Padding="0,10,0,10">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="buffalo.png" Width="30" Height="30"/>
+                    <TextBlock Margin="20,0,0,0" VerticalAlignment="Center">Buffalo</TextBlock>
+                </StackPanel>
+            </ListBoxItem>
+            
+            <ListBoxItem Margin="10,0,10,0" Padding="0,10,0,10">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="elephant.png" Width="30" Height="30"/>
+                    <TextBlock Margin="20,0,0,0" VerticalAlignment="Center">Elephant</TextBlock>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem Margin="10,0,10,0" Padding="0,10,0,10">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="giraffe.png" Width="30" Height="30"/>
+                    <TextBlock Margin="20,0,0,0" VerticalAlignment="Center">Giraffe</TextBlock>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem Margin="10,0,10,0" Padding="0,10,0,10">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="gorilla.png" Width="30" Height="30"/>
+                    <TextBlock Margin="20,0,0,0" VerticalAlignment="Center">Gorilla</TextBlock>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem Margin="10,0,10,0" Padding="0,10,0,10">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="guepard.png" Width="30" Height="30"/>
+                    <TextBlock Margin="20,0,0,0" VerticalAlignment="Center">Guepard</TextBlock>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem Margin="10,0,10,0" Padding="0,10,0,10">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="hippo.png" Width="30" Height="30"/>
+                    <TextBlock Margin="20,0,0,0" VerticalAlignment="Center">Hippo</TextBlock>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem Margin="10,0,10,0" Padding="0,10,0,10">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="hyena.png" Width="30" Height="30"/>
+                    <TextBlock Margin="20,0,0,0" VerticalAlignment="Center">Hyena</TextBlock>
+                </StackPanel>
+            </ListBoxItem>           
+            <ListBoxItem Margin="10,0,10,0" Padding="0,10,0,10">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="lion.png" Width="30" Height="30"/>
+                    <TextBlock Margin="20,0,0,0" VerticalAlignment="Center">Lion</TextBlock>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem Margin="10,0,10,0" Padding="0,10,0,10">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="mandrill.png" Width="30" Height="30"/>
+                    <TextBlock Margin="20,0,0,0" VerticalAlignment="Center">Mandrill</TextBlock>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem Margin="10,0,10,0" Padding="0,10,0,10">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="monkey.png" Width="30" Height="30"/>
+                    <TextBlock Margin="20,0,0,0" VerticalAlignment="Center">Monkey</TextBlock>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem Margin="10,0,10,0" Padding="0,10,0,10">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="rhinoceros.png" Width="30" Height="30"/>
+                    <TextBlock Margin="20,0,0,0" VerticalAlignment="Center">Rhinoceros</TextBlock>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem Margin="10,0,10,0" Padding="0,10,0,10">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="turtle.png" Width="30" Height="30"/>
+                    <TextBlock Margin="20,0,0,0" VerticalAlignment="Center">Turtle</TextBlock>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem Margin="10,0,10,0" Padding="0,10,0,10">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="warthog.png" Width="30" Height="30"/>
+                    <TextBlock Margin="20,0,0,0" VerticalAlignment="Center">Warthog</TextBlock>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem Margin="10,0,10,0" Padding="0,10,0,10">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="zebra.png" Width="30" Height="30"/>
+                    <TextBlock Margin="20,0,0,0" VerticalAlignment="Center">Zebra</TextBlock>
+                </StackPanel>
+            </ListBoxItem>
+        </ListBox>
+    </Grid>
+</Window>
