@@ -17,7 +17,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="Jungle_background.jpg"/>
         </Grid.Background>
-        <ListBox Grid.ColumnSpan="3" Grid.Column="1" Background="#FF02150E" Foreground="White" FontSize="16" FontFamily="Castellar" FontStyle="Italic">
+        <ListBox Grid.ColumnSpan="3" Grid.Column="1" Background="#FF02150E" Foreground="White" FontSize="16" FontFamily="Castellar" FontStyle="Italic" MouseDoubleClick="ListBox_MouseDoubleClick" >
           
             <ListBoxItem Margin="10,0,10,0" Padding="0,10,0,10">
                 <StackPanel Orientation="Horizontal">

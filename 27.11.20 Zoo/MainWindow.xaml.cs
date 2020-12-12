@@ -28,6 +28,7 @@ namespace _27._11._20_Zoo
         static private ComboBoxItem cbi;
         static private Image selectedImage = new Image();
         static private Image btnImage = new Image();
+        //static public Point point = new Point();
         public MainWindow()
         {
             InitializeComponent();
@@ -280,8 +281,12 @@ namespace _27._11._20_Zoo
 
         public void DoubleClickAviary(object sender, RoutedEventArgs e)
         {
+           // Button button = (Button)sender;
             AviaryWindow aviaryWindow = new AviaryWindow();
             aviaryWindow.ShowDialog();
+            //point.X = button.Margin.Left;
+            //point.Y = button.Margin.Top;
+            
         }
     }
 }

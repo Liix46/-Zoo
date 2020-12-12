@@ -55,9 +55,43 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AnimalAntelope.cs" />
+    <Compile Include="AnimalBison.cs" />
+    <Compile Include="AnimalBuffalo.cs" />
+    <Compile Include="AnimalElephant.cs" />
+    <Compile Include="AnimalGiraffe.cs" />
+    <Compile Include="AnimalGorilla.cs" />
+    <Compile Include="AnimalGuepard.cs" />
+    <Compile Include="AnimalHippo.cs" />
+    <Compile Include="AnimalHyena.cs" />
+    <Compile Include="AnimalLion.cs" />
+    <Compile Include="AnimalMandrill.cs" />
+    <Compile Include="AnimalMonkey.cs" />
+    <Compile Include="AnimalRhinoceros.cs" />
+    <Compile Include="AnimalTurtle.cs" />
+    <Compile Include="AnimalWarthog.cs" />
+    <Compile Include="AnimalZebra.cs" />
     <Compile Include="BuyAnimalsWindow.xaml.cs">
       <DependentUpon>BuyAnimalsWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FactoryAntelopes.cs" />
+    <Compile Include="FactoryBisons.cs" />
+    <Compile Include="FactoryBuffalos.cs" />
+    <Compile Include="FactoryElephants.cs" />
+    <Compile Include="FactoryGiraffes.cs" />
+    <Compile Include="FactoryGorillas.cs" />
+    <Compile Include="FactoryGuepards.cs" />
+    <Compile Include="FactoryHippos.cs" />
+    <Compile Include="FactoryHyenas.cs" />
+    <Compile Include="FactoryLions.cs" />
+    <Compile Include="FactoryMandrills.cs" />
+    <Compile Include="FactoryMonkeys.cs" />
+    <Compile Include="FactoryRhinoceroes.cs" />
+    <Compile Include="FactoryTurtles.cs" />
+    <Compile Include="FactoryWarthogs.cs" />
+    <Compile Include="FactoryZebras.cs" />
+    <Compile Include="IAnimal.cs" />
+    <Compile Include="IFactoryAnimals.cs" />
     <Compile Include="Registration.xaml.cs">
       <DependentUpon>Registration.xaml</DependentUpon>
     </Compile>

@@ -23,5 +23,10 @@ namespace _27._11._20_Zoo
         {
             InitializeComponent();
         }
+
+        private void ListBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+                     
+        }
     }
 }
