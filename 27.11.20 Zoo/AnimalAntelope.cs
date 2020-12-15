@@ -12,6 +12,20 @@ namespace _27._11._20_Zoo
         public string _breed;// вид животного
         public int _health;
         public int _bellyful; //сытость
+        private string _imagePath;
+        private int _xPos;
+        private int _yPos;
+
+        public AnimalAntelope() { }
+        public AnimalAntelope(string breed, int health, int bellyful, string imagePath, int xPos, int yPos)
+        {
+            _breed = breed;
+            _health = health;
+            _bellyful = bellyful;
+            _imagePath = imagePath;
+            _xPos = xPos;
+            _yPos = yPos;
+        }
 
         public string Breed
         {
@@ -97,6 +111,85 @@ namespace _27._11._20_Zoo
                     MessageBox.Show(ex.Message, "Error");
                 }
             }
+        }
+
+        public string ImagePath
+        {
+            get => _imagePath;
+            set
+            {
+                try
+                {
+                    if (value == null)
+                    {
+                        throw new ArgumentNullException("Image path cannot be null!");
+                    }
+                    _imagePath = value;
+                }
+                catch (ArgumentNullException ex)
+                {
+                    MessageBox.Show(ex.Message, "Error");
+                }
+                catch (ArgumentException ex)
+                {
+                    MessageBox.Show(ex.Message, "Error");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error");
+                }
+            }
+        }
+        public int XPos
+        {
+            get => _xPos;
+            set
+            {
+                try
+                {
+                    if (value < 0)
+                    {
+                        throw new ArgumentException("X position cannot be less than 0!");
+                    }
+                    _xPos = value;
+                }
+                catch (ArgumentException ex)
+                {
+                    MessageBox.Show(ex.Message, "Error");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error");
+                }
+            }
+        }
+        public int YPos
+        {
+            get => _yPos;
+            set
+            {
+                try
+                {
+                    if (value < 0)
+                    {
+                        throw new ArgumentException("Y position cannot be less than 0!");
+                    }
+                    _yPos = value;
+                }
+                catch (ArgumentException ex)
+                {
+                    MessageBox.Show(ex.Message, "Error");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error");
+                }
+            }
+        }
+
+        public IAnimal Clone()
+        {
+            return new AnimalAntelope();
         }
     }
 }

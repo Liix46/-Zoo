@@ -71,6 +71,8 @@
     <Compile Include="AnimalTurtle.cs" />
     <Compile Include="AnimalWarthog.cs" />
     <Compile Include="AnimalZebra.cs" />
+    <Compile Include="Aviary.cs" />
+    <Compile Include="AviaryRepository.cs" />
     <Compile Include="BuyAnimalsWindow.xaml.cs">
       <DependentUpon>BuyAnimalsWindow.xaml</DependentUpon>
     </Compile>
@@ -97,6 +99,7 @@
     </Compile>
     <Compile Include="User.cs" />
     <Compile Include="UsersRepository.cs" />
+    <Compile Include="XmlReaderWriter.cs" />
     <Page Include="AviaryWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -117,7 +120,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="Animal.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>

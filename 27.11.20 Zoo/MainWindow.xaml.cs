@@ -23,15 +23,61 @@ namespace _27._11._20_Zoo
 
     public partial class MainWindow : Window
     {
-        DispatcherTimer timer;
-        static private Button btn;
-        static private ComboBoxItem cbi;
-        static private Image selectedImage = new Image();
-        static private Image btnImage = new Image();
-        //static public Point point = new Point();
-        public MainWindow()
+        private static string _currentUser;
+        private DispatcherTimer timer = new DispatcherTimer();
+        private Button btn;
+        private ComboBoxItem cbi;
+        private Image selectedImage = new Image();
+        private Image btnImage = new Image();
+        private DispatcherTimer buildTimer = new DispatcherTimer();
+        
+        public XmlReaderWriter XmlReaderWriter = new XmlReaderWriter();
+        public List<IAnimal> emptyAnimals = new List<IAnimal>()
+        {
+            new AnimalAntelope(),
+            new AnimalBison(),
+            new AnimalBuffalo(),
+            new AnimalElephant(),
+            new AnimalGiraffe(),
+            new AnimalGorilla(),
+            new AnimalGuepard(),
+            new AnimalHippo(),
+            new AnimalHyena(),
+            new AnimalLion(),
+            new AnimalMandrill(),
+            new AnimalMonkey(),
+            new AnimalRhinoceros(),
+            new AnimalTurtle(),
+            new AnimalWarthog(),
+            new AnimalZebra()};
+
+    public MainWindow()
         {
             InitializeComponent();
+        }
+
+        public static string CurrentUser
+        {
+            get => _currentUser;
+            set
+            {
+                try
+                {
+                    if (value == null)
+                    {
+                        throw new ArgumentNullException("User login cannot be null");
+                    }
+                    _currentUser = value;
+                }
+                catch (ArgumentNullException ex)
+                {
+                    MessageBox.Show(ex.Message, "Error");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error");
+                }
+            }
         }
 
         private void MainWindow_Initialized(object sender, EventArgs e)
@@ -43,59 +89,31 @@ namespace _27._11._20_Zoo
         {
             try
             {
+
+                emptyAnimals.Add(new AnimalAntelope());
+                emptyAnimals.Add(new AnimalBison());
+                emptyAnimals.Add(new AnimalBuffalo());
+                emptyAnimals.Add(new AnimalElephant());
+                emptyAnimals.Add(new AnimalGiraffe());
+                emptyAnimals.Add(new AnimalGorilla());
+                emptyAnimals.Add(new AnimalGuepard());
+                emptyAnimals.Add(new AnimalHippo());
+                emptyAnimals.Add(new AnimalHyena());
+                emptyAnimals.Add(new AnimalLion());
+                emptyAnimals.Add(new AnimalMandrill());
+                emptyAnimals.Add(new AnimalMonkey());
+                emptyAnimals.Add(new AnimalRhinoceros());
+                emptyAnimals.Add(new AnimalTurtle());
+                emptyAnimals.Add(new AnimalWarthog());
+                emptyAnimals.Add(new AnimalZebra());
+
                 timer = new DispatcherTimer();
                 timer.Tick += new EventHandler(Timer_Tick);
                 timer.Interval = new TimeSpan(0, 0, 1);
                 timer.Start();
 
-                XmlDocument xDoc = new XmlDocument();
-                xDoc.Load("users.xml");
-
-
-                // получаем корневой элемент
-                XmlElement xRoot = xDoc.DocumentElement;
-
-                // обход всех узлов в корневом элементе
-                foreach (XmlNode xnode in xRoot)
-                {
-                    User newUser = new User();
-
-                    // получаем атрибут name
-                    if (xnode.Attributes.Count > 0)
-                    {
-                        XmlNode attr = xnode.Attributes.GetNamedItem("level");
-                        if (attr != null)
-                        {
-                            newUser.Level = Int32.Parse(attr.Value);
-                        }
-                    }
-                    // обходим все дочерние узлы элемента user
-                    foreach (XmlNode childnode in xnode.ChildNodes)
-                    {
-                        // если узел - login
-                        if (childnode.Name == "login")
-                        {
-                            newUser.Login = childnode.InnerText;
-                        }
-                        if (childnode.Name == "password")
-                        {
-                            newUser.Password = childnode.InnerText;
-                        }
-                        if (childnode.Name == "gold")
-                        {
-                            newUser.Gold = Int32.Parse(childnode.InnerText);
-                        }
-                        if (childnode.Name == "rating")
-                        {
-                            newUser.Rating = Int32.Parse(childnode.InnerText);
-                        }
-                        if (childnode.Name == "builders")
-                        {
-                            newUser.Builders = Int32.Parse(childnode.InnerText);
-                        }
-                    }
-                    UsersRepository.Users.Add(new User(newUser.Login, newUser.Password, newUser.Gold, newUser.Level, newUser.Rating, newUser.Builders));
-                }
+                XmlReaderWriter.ReadUsers();
+                XmlReaderWriter.ReadAviaries();
             }
             catch (Exception ex)
             {
@@ -105,79 +123,8 @@ namespace _27._11._20_Zoo
 
         private void MainWindow_Closing(object sender, CancelEventArgs e)
         {
-            try
-            {
-                DeleteAllXmlNodes();
-
-                XmlDocument xDoc = new XmlDocument();
-                xDoc.Load("users.xml");
-                XmlElement xRoot = xDoc.DocumentElement;
-
-                foreach (var ev in UsersRepository.Users)
-                {
-                    XmlElement userElem;
-                    // создаем новый элемент event
-                    userElem = xDoc.CreateElement("user");
-                    // создаем атрибут name
-                    XmlAttribute levelAttr = xDoc.CreateAttribute("level");
-                    // создаем элемент login
-                    XmlElement loginElem = xDoc.CreateElement("login");
-                    // создаем элемент password
-                    XmlElement passwordElem = xDoc.CreateElement("password");
-                    // создаем элемент gold
-                    XmlElement goldElem = xDoc.CreateElement("gold");
-                    // создаем элемент rating
-                    XmlElement ratingElem = xDoc.CreateElement("rating");
-                    // создаем элемент builders
-                    XmlElement buildersElem = xDoc.CreateElement("builders");
-                    // создаем текстовые значения для элементов и атрибута
-                    XmlText levelText = xDoc.CreateTextNode(ev.Level.ToString());
-                    XmlText loginText = xDoc.CreateTextNode(ev.Login);
-                    XmlText passwordText = xDoc.CreateTextNode(ev.Password);
-                    XmlText goldText = xDoc.CreateTextNode(ev.Gold.ToString());
-                    XmlText ratingText = xDoc.CreateTextNode(ev.Rating.ToString());
-                    XmlText buildersText = xDoc.CreateTextNode(ev.Builders.ToString());
-
-                    //добавляем узлы
-                    levelAttr.AppendChild(levelText);
-                    loginElem.AppendChild(loginText);
-                    passwordElem.AppendChild(passwordText);
-                    goldElem.AppendChild(goldText);
-                    ratingElem.AppendChild(ratingText);
-                    buildersElem.AppendChild(buildersText);
-                    userElem.Attributes.Append(levelAttr);
-                    userElem.AppendChild(loginElem);
-                    userElem.AppendChild(passwordElem);
-                    userElem.AppendChild(goldElem);
-                    userElem.AppendChild(ratingElem);
-                    userElem.AppendChild(buildersElem);
-                    xRoot.AppendChild(userElem);
-                }
-                xDoc.Save("users.xml");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error");
-            }
-        }
-
-        private void DeleteAllXmlNodes()
-        {
-            try
-            {
-                XmlDocument xDoc = new XmlDocument();
-                xDoc.Load("users.xml");
-
-                // получаем корневой элемент
-                XmlElement xRoot = xDoc.DocumentElement;
-
-                xRoot.RemoveAll();
-                xDoc.Save("users.xml");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error");
-            }
+            XmlReaderWriter.WriteUsers();
+            XmlReaderWriter.WriteAviaries();
         }
 
         private void MainWindow_Closed(object sender, EventArgs e)
@@ -248,7 +195,20 @@ namespace _27._11._20_Zoo
             selectedImage = (Image)cbi.Content;
 
             btnImage.Source = selectedImage.Source;
+            btnImage.Opacity = 0;
             btn.Content = btnImage;
+
+            buildTimer.Tick += new EventHandler(buildTimer_Tick);
+            buildTimer.Interval = new TimeSpan(0, 0, 1);
+            buildTimer.Start();
+        }
+
+        private void buildTimer_Tick(object sender, EventArgs e)
+        {
+            btnImage.Opacity += 0.25;
+
+            if (btnImage.Opacity == 1)
+                buildTimer.Stop();
         }
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
@@ -281,12 +241,8 @@ namespace _27._11._20_Zoo
 
         public void DoubleClickAviary(object sender, RoutedEventArgs e)
         {
-           // Button button = (Button)sender;
             AviaryWindow aviaryWindow = new AviaryWindow();
             aviaryWindow.ShowDialog();
-            //point.X = button.Margin.Left;
-            //point.Y = button.Margin.Top;
-            
         }
     }
 }
